@@ -1,0 +1,67 @@
+{
+	"info": {
+		"_postman_id": "3e3c00b5-20c9-ce05-1496-8a3275ae3390",
+		"name": "MM",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "SNAPSHOT",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d282415e-0f46-4561-8d7a-160d901d9efe",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Response time is less than 500ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(700);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "mm",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "itacs9",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://primary.bquint.info/mmapi/livesnapshot-bse-nse",
+					"protocol": "http",
+					"host": [
+						"primary",
+						"bquint",
+						"info"
+					],
+					"path": [
+						"mmapi",
+						"livesnapshot-bse-nse"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

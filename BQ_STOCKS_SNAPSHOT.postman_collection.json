@@ -1,0 +1,84 @@
+{
+	"info": {
+		"_postman_id": "c5c2aec5-df37-45a5-b890-42895b8fb191",
+		"name": "BQ STOCKS SNAPSHOT",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "BQ STOCKS SNAPSHOT",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "2b2d1e18-8c15-4145-883e-2aababdcc1b2",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Response time is less than 500ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(400);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "qt",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "itacs9",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://primary.bquint.info/bqmumfeed/finance-api/quote/NIFTY%2050,SENSEX,WIPRO,BOROSIL",
+					"protocol": "http",
+					"host": [
+						"primary",
+						"bquint",
+						"info"
+					],
+					"path": [
+						"bqmumfeed",
+						"finance-api",
+						"quote",
+						"NIFTY%2050,SENSEX,WIPRO,BOROSIL"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "username",
+				"value": "qt",
+				"type": "string"
+			},
+			{
+				"key": "password",
+				"value": "itacs9",
+				"type": "string"
+			}
+		]
+	}
+}
