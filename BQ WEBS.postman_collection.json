@@ -6,7 +6,7 @@
 	},
 	"item": [
 		{
-			"name": "CHECK BQWEBS http://bqwebsb.bquint.info",
+			"name": "CHECK BQWEBS http://bqwebs.bquint.info",
 			"event": [
 				{
 					"listen": "test",
@@ -41,7 +41,7 @@
 						"info"
 					]
 				},
-				"description": "Check if http://bqwebsb.bquint.info is up or not"
+				"description": "Check if http://bqwebs.bquint.info (Main) is up or not"
 			},
 			"response": []
 		}
