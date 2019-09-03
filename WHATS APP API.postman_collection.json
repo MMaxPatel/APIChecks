@@ -1,0 +1,50 @@
+{
+	"info": {
+		"_postman_id": "6258ad9c-9a37-4039-b441-d5f85401ce96",
+		"name": "WHATS APP API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "WHATS APP API",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d5c68355-d136-4f33-9e18-edbdbabb1a80",
+						"exec": [
+							"pm.test(\"Status code is 200 (Working)\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Response time is less than 500ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(1000);",
+							"pm.environment.get(\"variable_key\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://primary.bquint.info/bqmumfeed/finance-api/livesnapshot-bse-nse",
+					"protocol": "http",
+					"host": [
+						"primary",
+						"bquint",
+						"info"
+					],
+					"path": [
+						"bqmumfeed",
+						"finance-api",
+						"livesnapshot-bse-nse"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
