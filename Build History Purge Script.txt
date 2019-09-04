@@ -1,0 +1,11 @@
+def numberOfBuildsToKeep = 10
+Jenkins.instance.getAllItems(AbstractItem.class).each {
+  if( it.class.toString() != "class com.cloudbees.hudson.plugins.folder.Folder" && it.class.toString() != "class org.jenkinsci.plugins.workflow.multibranch.WorkflowMultiBranchProject") {
+    println it.name
+    builds = it.getBuilds()
+    for(int i = numberOfBuildsToKeep; i < builds.size(); i++) {
+        builds.get(i).delete()
+      println "Deleted" + builds.get(i)
+    }
+  }
+}
